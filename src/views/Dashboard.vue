@@ -4,7 +4,7 @@ import Task from '@/components/Task.vue'
 import CreateOrEditTask from '@/components/CreateOrEditTask.vue'
 import useTaskCompose from '@/composables/useTaskCompose.js'
 const { getList, tasks } = useTaskCompose()
-
+const inLoad = ref(true);
 const currentTaskData = ref({})
 const insertNew = ref(false)
 const insertNewOff = () => {
@@ -68,7 +68,24 @@ onMounted(() => {
       <div v-if="!tasks.length"
         class="w-full p-1  flex flex-row   bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <div class="flex w-full  flex-col items-start   ">
-          <span class="text-sm px-4 text-gray-500 dark:text-gray-400">there is no task yet. start create one</span>
+          <span v-if="!inLoad" class="text-sm px-4 text-gray-500 dark:text-gray-400">there is no task yet. start create
+            one</span>
+          <span v-else class="text-sm px-4 text-gray-500 dark:text-gray-400 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+              <circle cx="4" cy="12" r="3" fill="currentColor">
+                <animate id="svgSpinners3DotsFade0" fill="freeze" attributeName="opacity"
+                  begin="0;svgSpinners3DotsFade1.end-0.25s" dur="0.75s" values="1;0.2" />
+              </circle>
+              <circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.4">
+                <animate fill="freeze" attributeName="opacity" begin="svgSpinners3DotsFade0.begin+0.15s" dur="0.75s"
+                  values="1;0.2" />
+              </circle>
+              <circle cx="20" cy="12" r="3" fill="currentColor" opacity="0.3">
+                <animate id="svgSpinners3DotsFade1" fill="freeze" attributeName="opacity"
+                  begin="svgSpinners3DotsFade0.begin+0.3s" dur="0.75s" values="1;0.2" />
+              </circle>
+            </svg>
+          </span>
         </div>
 
       </div>
