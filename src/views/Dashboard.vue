@@ -70,7 +70,8 @@ onMounted(() => {
         <div class="flex w-full  flex-col items-start   ">
           <span v-if="!inLoad" class="text-sm px-4 text-gray-500 dark:text-gray-400">there is no task yet. start create
             one</span>
-          <span v-else class="text-sm px-4 text-gray-500 dark:text-gray-400 text-center">
+          <span v-else
+            class="text-sm flex justify-center items-center px-4 text-gray-500 dark:text-gray-400 text-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
               <circle cx="4" cy="12" r="3" fill="currentColor">
                 <animate id="svgSpinners3DotsFade0" fill="freeze" attributeName="opacity"
