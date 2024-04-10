@@ -38,8 +38,9 @@ const createNewTask = () => {
 }
 
 
-onMounted(() => {
-  getList()
+onMounted(async() => {
+  await getList()
+  inLoad.value=false;
   currentTaskData.value = {}
 })
 
