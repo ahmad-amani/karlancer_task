@@ -5,12 +5,14 @@ import { data } from "autoprefixer";
 export default function useTaskCompose() {
     const text = ref('')
     const id = ref(false)
+    const currentTaskOrg = ref({})
+
     const tasks = ref([])
     const deleting = ref(false)
 
     const dueDate = ref('')
     const updateFieldByCurrentTask = (currentTask) => {
-        console.log(currentTask);
+        currentTaskOrg.value = currentTask
         text.value = currentTask.text
         dueDate.value = currentTask.due_date
         id.value = currentTask.id
