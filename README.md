@@ -28,4 +28,3 @@ npm run dev
 npm run build
 ```
 
-# karlancer_task_frontend
