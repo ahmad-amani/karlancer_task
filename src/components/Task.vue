@@ -7,7 +7,8 @@ const props = defineProps({
     dueDate: {},
     currentTaskData: {},
     updateTasksData: {},
-    task: {}
+    task: {},
+    insertNewOn:{}
 })
 
 const deleteTaskAndUpdate = async (task) => {
