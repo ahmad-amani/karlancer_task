@@ -37,7 +37,7 @@ export default function useTaskCompose() {
         let task = false;
         try {
             let data = { text: text.value }
-            if (dueDate.value & currentTask?.due_date != dueDate.value) data.due_date = dueDate.value
+            if (dueDate.value & currentTaskOrg.due_date != dueDate.value) data.due_date = dueDate.value
 
             if (id.value) {
                 const res = await axios.put('tasks/' + id.value, data)
