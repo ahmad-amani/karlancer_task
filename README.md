@@ -27,6 +27,5 @@ npm run dev
 ```sh
 npm run build
 ```
-# payment_challenge_frontent
-# karlancer_task_frontend
+
 # karlancer_task_frontend
