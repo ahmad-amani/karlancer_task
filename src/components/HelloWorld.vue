@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="greetings">
+  <div class="greetings hidden xl:block">
     <h1 class="green">{{ msg }}</h1>
     <h3>
       This project created with

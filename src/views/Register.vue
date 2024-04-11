@@ -8,7 +8,7 @@ const { password, email, verify, resend, verifyUrl, register } = useAuthCompose(
 <template>
   <div v-if="!verifyUrl" class="xl:border-l-4 flex justify-center">
 
-    <div class="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+    <div class="flex min-h-full flex-1 flex-col justify-center p-4  xl:py-12 xl:px-8">
       <div class="hidden xl:block sm:mx-auto sm:w-full sm:max-w-sm">
         <div class="flex justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -18,11 +18,11 @@ const { password, email, verify, resend, verifyUrl, register } = useAuthCompose(
           </svg>
 
         </div>
-        <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Register an account
+        <h2 class="xl:mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Register an account
         </h2>
       </div>
 
-      <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <div class="xl:mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
         <form class="space-y-6">
           <div>
             <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email</label>
@@ -51,7 +51,7 @@ const { password, email, verify, resend, verifyUrl, register } = useAuthCompose(
           </div>
         </form>
 
-        <p class="mt-10 text-center text-sm text-gray-500">
+        <p class="xl:mt-10 text-center text-sm text-gray-500">
           already have an acoount?
           {{ ' ' }}
           <RouterLink to="/login" href="#" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">

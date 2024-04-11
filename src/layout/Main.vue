@@ -10,24 +10,37 @@ const { logout } = useAuthCompose()
 <template>
   <div id="main">
     <div id="app">
-      <header class="mr-4">
+      <div class="mr-4 hidden xl:flex place-items-center">
         <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
         <div class="wrapper overflow-hidden">
           <HelloWorld msg="Karlancer Challenge!" />
 
-          <nav class="flex overflow-x-auto" v-if="!auth.user?.token">
+          <nav class="flex overflow-x-auto m-0 xl:mt-2" v-if="!auth.user?.token">
             <RouterLink to="/login">Login</RouterLink>
             <RouterLink to="/register">Register</RouterLink>
           </nav>
-          <nav class="flex overflow-x-auto" v-else>
+          <nav class="flex overflow-x-auto m-0 xl:mt-2" v-else>
             <RouterLink to="/dashboard">Dashboard</RouterLink>
-          
+
             <a href="#" @click="logout">Logout</a>
 
           </nav>
         </div>
-      </header>
+      </div>
+      <div class="mr-4 flex place-items-center xl:hidden">
+        <div class="wrapper overflow-hidden">
+          <nav class="flex overflow-x-auto m-0 xl:mt-2" v-if="!auth.user?.token">
+            <RouterLink to="/login">Login</RouterLink>
+            <RouterLink to="/register">Register</RouterLink>
+          </nav>
+          <nav class="flex overflow-x-auto m-0 xl:mt-2" v-else>
+            <RouterLink to="/dashboard">Dashboard</RouterLink>
+
+            <a href="#" @click="logout">Logout</a>
+
+          </nav>
+        </div>
+      </div>
 
       <router-view v-slot="{ Component }">
         <Transition name="page" mode="out-in">
@@ -71,7 +84,7 @@ const { logout } = useAuthCompose()
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0rem;
   font-weight: normal;
 }
 
